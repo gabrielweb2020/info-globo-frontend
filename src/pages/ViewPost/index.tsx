@@ -34,7 +34,7 @@ const ViewPost: React.FC = () => {
       );
       setTitle(response.data.post.title);
       setDescription(response.data.post.description);
-      setUser(response.data.post.user);
+      setUser(response.data.post.user.name);
       setDate(postFormatted);
     });
   }, []);
@@ -59,7 +59,7 @@ const ViewPost: React.FC = () => {
         <h1>{title}</h1>
         <span>
           <FiClock /> {date}
-          <FiUser /> {user.name}
+          <FiUser /> {user}
         </span>
         <section>
           <p>{description}</p>
